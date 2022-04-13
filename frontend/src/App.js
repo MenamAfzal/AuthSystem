@@ -23,7 +23,7 @@ const App = () => (
           // button to access bckend in order to send email to reset password
           />
           <Route exact path='/password/reset/confirm/:uid/:token' element={<ResetPasswordConfirm />} />
-          <Route exact path='/activate/:uid/:token' element={<Activate />} />
+          <Route exact path='/activate/:uid1/:token1' element={<Activate />} />
         </Routes>
       </Layout>
     </Router>
@@ -31,4 +31,4 @@ const App = () => (
 
 );
 export default App;
-//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 (access token github)
+//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 (access token github)

@@ -1,15 +1,15 @@
-import React,{Fragment , useState} from 'react';
-import { Link, Navigate } from 'react-router-dom'
+import React, { Fragment, useState } from 'react';
+import { Link, Navigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from '../actions/auth';
 
 const Navbar = ({ logout, isAuthenticated }) => {
-    const [redirect, setRedirect] = useState(false);
+  //  const [redirect, setRedirect] = useState(false);
 
-    const logout_user = () => {
-        logout();
-        setRedirect(true);
-    };
+    // const logout_user = () => {
+    //     logout();
+    //    // setRedirect(true);
+    // };
 
     const guestLinks = () => (
         <Fragment>
@@ -24,7 +24,7 @@ const Navbar = ({ logout, isAuthenticated }) => {
 
     const authLinks = () => (
         <li className='nav-item'>
-            <a className='nav-link' href='#!' onClick={logout_user}>Logout</a>
+            <a className='nav-link' href='#!' onClick={logout}>Logout</a>
         </li>
     );
 
@@ -52,7 +52,7 @@ const Navbar = ({ logout, isAuthenticated }) => {
                     </ul>
                 </div>
             </nav>
-            {redirect ? <Navigate to='/' /> : <Fragment></Fragment>}
+            {/* {redirect ? <Navigate to='/' /> : <Fragment></Fragment>} */}
         </Fragment>
     );
 };

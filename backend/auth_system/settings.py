@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -98,7 +99,7 @@ EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST          = 'smtp.gmail.com'
 EMAIL_PORT          =  587
 EMAIL_HOST_USER     = 'meenamafzal1@gmail.com'
-EMAIL_HOST_PASSWORD = 'jbrubrsonmjreivp'
+EMAIL_HOST_PASSWORD = 'lykdyqkgvsfsswwv'
 EMAIL_USE_TLS       =  True  
 
 
@@ -154,6 +155,8 @@ REST_FRAMEWORK   = {
                     }
 SIMPLE_JWT       = {
                     'AUTH_HEADER_TYPES': ('JWT',),
+                    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+                    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
                     }
 DJOSER           = {
                    'LOGIN_FIELD'                         : 'email',
@@ -167,6 +170,7 @@ DJOSER           = {
                    'USERNAME_RESET_CONFIRM_URL'          : 'email/reset/confirm/{uid}/{token}',
                    'ACTIVATION_URL'                      : 'activate/{uid}/{token}',
                    'SEND_ACTIVATION_EMAIL'               : True,
+                #    'PASSWORD_RESET_CONFIRM_RETYPE'       : True,
                    'SERIALIZERS'                         : {
                        'user_create': 'accounts.serializers.UserCreateSerializer',
                        'user'       : 'accounts.serializers.UserCreateSerializer',
